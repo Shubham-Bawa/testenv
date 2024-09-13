@@ -9,18 +9,20 @@ on:
 jobs:
   Buildandpushdocker:
     runs-on: ubuntu-latest
-    environment: Dev
+    # environment: Dev
     steps:
-      - name: gitclone 
-        run: git clone https://github.com/Shubhambawa98/testenv.git
-      - name: docker installation 
-        run: curl -fsSL https://get.docker.com | sh 
-      - name: docker login 
-        run: docker login --username ${{secrets.DOCKERHUBUSERNAME}} --password-stdin ${{secrets.DOCKERHUBPASSWORD}}
-      - name: print passwords 
-        run: echo ${{secrets.DOCKERHUBUSERNAME}}
-      - name: docker build 
-        run: cd testenv && docker build . -t fast_api:satyam
+      - name: github Actor 
+        run: echo "who triggered the workflow ${{ github.actor }} repo is ${{github.repository}} lastcommit ${{ github.sha}} and event name $${{github.event_name}} " 
+      # - name: gitclone 
+      #   run: git clone https://github.com/Shubhambawa98/testenv.git
+      # - name: docker installation 
+      #   run: curl -fsSL https://get.docker.com | sh 
+      # - name: docker login 
+      #   run: docker login --username ${{secrets.DOCKERHUBUSERNAME}} --password-stdin ${{secrets.DOCKERHUBPASSWORD}}
+      # - name: print passwords 
+      #   run: echo ${{secrets.DOCKERHUBUSERNAME}}
+      # - name: docker build 
+      #   run: cd testenv && docker build . -t fast_api:satyam
 
      
   
