@@ -10,6 +10,8 @@ jobs:
   Buildandpushdocker:
     runs-on: ubuntu-latest
     # environment: Dev
+    env:
+      var1: 'this variable is for demo'
     steps:
       - name: github Actor 
         run: echo "who triggered the workflow ${{ github.actor }} repo is ${{github.repository}} lastcommit ${{ github.sha}} and event name $${{github.event_name}} " 
@@ -17,6 +19,8 @@ jobs:
         run: echo  ${{  github.actor }} >> actorname.txt 
       - name: print 
         run: cat actorname.txt 
+      - name: print varibale value 
+        run: echo $var1
       # - name: gitclone 
       #   run: git clone https://github.com/Shubhambawa98/testenv.git
       # - name: docker installation 
