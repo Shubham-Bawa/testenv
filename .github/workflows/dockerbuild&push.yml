@@ -20,7 +20,7 @@ jobs:
       - name: print 
         run: cat actorname.txt 
       - name: print varibale value 
-        run: echo '$var1 and API URL $${{GITHUB_API_URL}}'
+        run: echo '$var1 and API URL ${{GITHUB_API_URL}}'
       # - name: gitclone 
       #   run: git clone https://github.com/Shubhambawa98/testenv.git
       # - name: docker installation 
